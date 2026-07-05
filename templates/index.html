@@ -9,46 +9,66 @@
   <body>
     <aside class="sidebar">
       <div class="brand">
-        <span class="brand-mark">AI</span>
+        <span class="brand-mark">NLP</span>
         <div>
-          <strong>Sentiment NLP</strong>
-          <small>Mini projet IA</small>
+          <strong>Sentiment Studio</strong>
+          <small>IA & NLP dashboard</small>
         </div>
       </div>
       <nav class="tabs" aria-label="Navigation">
-        <button class="tab active" data-tab="dashboard">Tableau de bord</button>
-        <button class="tab" data-tab="predict">Prediction</button>
-        <button class="tab" data-tab="data">Dataset</button>
-        <button class="tab" data-tab="model">Modele</button>
+        <button class="tab active" data-tab="dashboard"><span>01</span> Tableau de bord</button>
+        <button class="tab" data-tab="predict"><span>02</span> Prediction IA</button>
+        <button class="tab" data-tab="data"><span>03</span> Dataset</button>
+        <button class="tab" data-tab="model"><span>04</span> Modele</button>
       </nav>
+      <div class="sidebar-note">
+        <strong>Pipeline</strong>
+        <p>Nettoyage texte, TF-IDF, signaux lexicaux et regression logistique.</p>
+      </div>
     </aside>
 
     <main class="app">
       <section class="hero">
         <div>
-          <p class="eyebrow">Exploration de donnees + NLP + classification</p>
-          <h1>Analyse des sentiments des avis clients</h1>
+          <p class="eyebrow">Projet IA appliquee</p>
+          <h1>Analyse professionnelle des sentiments clients</h1>
+          <p class="hero-copy">
+            Explore les avis, mesure la performance du modele et teste une prediction en temps reel
+            dans une interface claire, deployable et orientee decision.
+          </p>
+          <div class="hero-tags">
+            <span>NLP</span>
+            <span>Classification</span>
+            <span>Dashboard</span>
+          </div>
         </div>
-        <div class="status" id="status">Chargement</div>
+        <div class="hero-score">
+          <span>Etat du service</span>
+          <strong id="status">Chargement</strong>
+        </div>
       </section>
 
       <section id="dashboard" class="panel active">
         <div class="kpi-grid">
           <article class="kpi">
-            <span>Avis</span>
+            <span>Total avis</span>
             <strong id="rows">-</strong>
+            <small>Corpus analyse</small>
           </article>
           <article class="kpi">
             <span>Mots / avis</span>
             <strong id="avgWords">-</strong>
+            <small>Longueur moyenne</small>
           </article>
           <article class="kpi">
             <span>Caracteres / avis</span>
             <strong id="avgChars">-</strong>
+            <small>Densite textuelle</small>
           </article>
           <article class="kpi">
             <span>Classes</span>
             <strong id="classCount">-</strong>
+            <small>Positif, neutre, negatif</small>
           </article>
         </div>
 
@@ -67,6 +87,25 @@
           </article>
         </div>
 
+        <div class="grid two compact">
+          <article class="card">
+            <header>
+              <h2>Sources des avis</h2>
+            </header>
+            <div id="sourceList" class="source-list"></div>
+          </article>
+          <article class="card">
+            <header>
+              <h2>Synthese projet</h2>
+            </header>
+            <div class="method-list">
+              <div><strong>1</strong><span>Chargement et controle du dataset</span></div>
+              <div><strong>2</strong><span>Nettoyage NLP et vectorisation TF-IDF</span></div>
+              <div><strong>3</strong><span>Classification et evaluation du modele</span></div>
+            </div>
+          </article>
+        </div>
+
         <article class="card">
           <header>
             <h2>Mots les plus frequents</h2>
@@ -82,25 +121,43 @@
       </section>
 
       <section id="predict" class="panel">
-        <article class="card predictor">
-          <header>
-            <h2>Tester un nouvel avis</h2>
-          </header>
-          <textarea id="textInput" rows="7">Le produit est arrive rapidement et la qualite est excellente.</textarea>
-          <div class="actions">
-            <button id="predictButton">Analyser</button>
-            <button id="clearButton" class="secondary">Effacer</button>
-          </div>
-          <div id="predictionResult" class="result empty">
-            Saisis un avis puis lance l'analyse.
-          </div>
-        </article>
+        <div class="predict-layout">
+          <article class="card predictor">
+            <header>
+              <div>
+                <h2>Tester un nouvel avis</h2>
+                <p class="section-copy">Le modele calcule le sentiment et affiche les probabilites par classe.</p>
+              </div>
+            </header>
+            <textarea id="textInput" rows="8">Le produit est arrive rapidement et la qualite est excellente.</textarea>
+            <div class="quick-examples">
+              <button class="ghost example" data-text="Le support a resolu mon probleme rapidement et le service etait excellent.">Exemple positif</button>
+              <button class="ghost example" data-text="Produit correct mais rien d'exceptionnel, la livraison etait normale.">Exemple neutre</button>
+              <button class="ghost example" data-text="Application lente, bugs frequents et service client inutile.">Exemple negatif</button>
+            </div>
+            <div class="actions">
+              <button id="predictButton">Analyser le sentiment</button>
+              <button id="clearButton" class="secondary">Effacer</button>
+            </div>
+          </article>
+          <article class="card result-card">
+            <header>
+              <h2>Resultat</h2>
+            </header>
+            <div id="predictionResult" class="result empty">
+              Saisis un avis puis lance l'analyse.
+            </div>
+          </article>
+        </div>
       </section>
 
       <section id="data" class="panel">
         <article class="card">
           <header>
-            <h2>Apercu du dataset</h2>
+            <div>
+              <h2>Apercu du dataset</h2>
+              <p class="section-copy">Recherche par texte, sentiment ou source.</p>
+            </div>
             <input id="searchInput" type="search" placeholder="Rechercher un avis" />
           </header>
           <div class="table-wrap">
@@ -124,14 +181,14 @@
         <div class="grid two">
           <article class="card">
             <header>
-              <h2>Performance</h2>
+              <h2>Performance du modele</h2>
             </header>
-            <div class="metric-line">
-              <span>Accuracy</span>
+            <div class="accuracy-ring" id="accuracyRing">
               <strong id="accuracy">-</strong>
+              <span>Accuracy</span>
             </div>
             <div class="metric-line">
-              <span>Donnees entrainement</span>
+              <span>Donnees d'entrainement</span>
               <strong id="trainSize">-</strong>
             </div>
             <div class="metric-line">
@@ -171,4 +228,3 @@
     <script src="/static/app.js"></script>
   </body>
 </html>
-
