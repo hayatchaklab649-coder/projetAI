@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Analyse des sentiments - IA & NLP</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">AI</span>
+        <div>
+          <strong>Sentiment NLP</strong>
+          <small>Mini projet IA</small>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="Navigation">
+        <button class="tab active" data-tab="dashboard">Tableau de bord</button>
+        <button class="tab" data-tab="predict">Prediction</button>
+        <button class="tab" data-tab="data">Dataset</button>
+        <button class="tab" data-tab="model">Modele</button>
+      </nav>
+    </aside>
+
+    <main class="app">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Exploration de donnees + NLP + classification</p>
+          <h1>Analyse des sentiments des avis clients</h1>
+        </div>
+        <div class="status" id="status">Chargement</div>
+      </section>
+
+      <section id="dashboard" class="panel active">
+        <div class="kpi-grid">
+          <article class="kpi">
+            <span>Avis</span>
+            <strong id="rows">-</strong>
+          </article>
+          <article class="kpi">
+            <span>Mots / avis</span>
+            <strong id="avgWords">-</strong>
+          </article>
+          <article class="kpi">
+            <span>Caracteres / avis</span>
+            <strong id="avgChars">-</strong>
+          </article>
+          <article class="kpi">
+            <span>Classes</span>
+            <strong id="classCount">-</strong>
+          </article>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <header>
+              <h2>Repartition des sentiments</h2>
+            </header>
+            <canvas id="sentimentChart" height="240"></canvas>
+          </article>
+          <article class="card">
+            <header>
+              <h2>Longueur moyenne</h2>
+            </header>
+            <canvas id="lengthChart" height="240"></canvas>
+          </article>
+        </div>
+
+        <article class="card">
+          <header>
+            <h2>Mots les plus frequents</h2>
+            <select id="wordFilter" aria-label="Filtrer par sentiment">
+              <option value="all">Tous</option>
+              <option value="positif">Positif</option>
+              <option value="neutre">Neutre</option>
+              <option value="negatif">Negatif</option>
+            </select>
+          </header>
+          <div id="wordCloud" class="word-cloud"></div>
+        </article>
+      </section>
+
+      <section id="predict" class="panel">
+        <article class="card predictor">
+          <header>
+            <h2>Tester un nouvel avis</h2>
+          </header>
+          <textarea id="textInput" rows="7">Le produit est arrive rapidement et la qualite est excellente.</textarea>
+          <div class="actions">
+            <button id="predictButton">Analyser</button>
+            <button id="clearButton" class="secondary">Effacer</button>
+          </div>
+          <div id="predictionResult" class="result empty">
+            Saisis un avis puis lance l'analyse.
+          </div>
+        </article>
+      </section>
+
+      <section id="data" class="panel">
+        <article class="card">
+          <header>
+            <h2>Apercu du dataset</h2>
+            <input id="searchInput" type="search" placeholder="Rechercher un avis" />
+          </header>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Texte</th>
+                  <th>Sentiment</th>
+                  <th>Source</th>
+                  <th>Mots</th>
+                </tr>
+              </thead>
+              <tbody id="datasetBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section id="model" class="panel">
+        <div class="grid two">
+          <article class="card">
+            <header>
+              <h2>Performance</h2>
+            </header>
+            <div class="metric-line">
+              <span>Accuracy</span>
+              <strong id="accuracy">-</strong>
+            </div>
+            <div class="metric-line">
+              <span>Donnees entrainement</span>
+              <strong id="trainSize">-</strong>
+            </div>
+            <div class="metric-line">
+              <span>Donnees test</span>
+              <strong id="testSize">-</strong>
+            </div>
+          </article>
+          <article class="card">
+            <header>
+              <h2>Matrice de confusion</h2>
+            </header>
+            <div id="confusionMatrix" class="matrix"></div>
+          </article>
+        </div>
+        <article class="card">
+          <header>
+            <h2>Rapport de classification</h2>
+          </header>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Classe</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1-score</th>
+                  <th>Support</th>
+                </tr>
+              </thead>
+              <tbody id="reportBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+

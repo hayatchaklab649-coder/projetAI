@@ -1,0 +1,62 @@
+id,text,sentiment,source
+1,"Produit excellent, livraison rapide et emballage soigne.",positif,ecommerce
+2,"Je suis tres satisfait de la qualite, le service client est efficace.",positif,ecommerce
+3,"Application simple a utiliser, interface claire et rapide.",positif,application
+4,"Le restaurant etait agreable et le personnel tres attentif.",positif,restaurant
+5,"Tres bonne experience, je recommande sans hesitation.",positif,ecommerce
+6,"La commande est arrivee en avance et tout fonctionne parfaitement.",positif,ecommerce
+7,"Qualite superieure a mes attentes, prix raisonnable.",positif,ecommerce
+8,"Le support a resolu mon probleme rapidement.",positif,service
+9,"Film captivant avec une excellente realisation.",positif,cinema
+10,"Hotel propre, calme et proche du centre.",positif,hotel
+11,"Le produit est robuste et facile a installer.",positif,ecommerce
+12,"Tres bon rapport qualite prix.",positif,ecommerce
+13,"Experience fluide, aucune erreur pendant l'utilisation.",positif,application
+14,"Repas delicieux et service chaleureux.",positif,restaurant
+15,"Je suis content de mon achat, il correspond parfaitement a la description.",positif,ecommerce
+16,"Equipe professionnelle et tres reactive.",positif,service
+17,"La batterie tient longtemps et les performances sont bonnes.",positif,ecommerce
+18,"Plateforme utile, bien organisee et intuitive.",positif,application
+19,"Sejour excellent, chambre confortable et petit dejeuner varie.",positif,hotel
+20,"Livraison impeccable et produit conforme.",positif,ecommerce
+21,"Produit correct mais rien d'exceptionnel.",neutre,ecommerce
+22,"Le service etait acceptable, sans plus.",neutre,service
+23,"Application fonctionnelle mais l'interface pourrait etre amelioree.",neutre,application
+24,"Le repas etait moyen, ni mauvais ni excellent.",neutre,restaurant
+25,"Livraison dans les delais, emballage standard.",neutre,ecommerce
+26,"Hotel convenable pour une seule nuit.",neutre,hotel
+27,"Le film se regarde, mais il manque de rythme.",neutre,cinema
+28,"Produit conforme, mais le prix reste un peu eleve.",neutre,ecommerce
+29,"Support disponible, reponse assez lente.",neutre,service
+30,"Experience normale, je n'ai pas rencontre de probleme majeur.",neutre,application
+31,"La qualite est moyenne pour cette gamme.",neutre,ecommerce
+32,"Chambre propre mais decoration un peu ancienne.",neutre,hotel
+33,"Commande recue, rien de particulier a signaler.",neutre,ecommerce
+34,"Restaurant correct, ambiance calme.",neutre,restaurant
+35,"Fonctionnalites utiles mais certaines options manquent.",neutre,application
+36,"Le produit fait son travail, sans surprise.",neutre,ecommerce
+37,"Accueil poli mais assez impersonnel.",neutre,service
+38,"Film interessant par moments mais inegal.",neutre,cinema
+39,"Service stable, performance moyenne.",neutre,application
+40,"Achat acceptable pour le prix.",neutre,ecommerce
+41,"Produit defectueux apres deux jours d'utilisation.",negatif,ecommerce
+42,"Livraison tres lente et colis abime.",negatif,ecommerce
+43,"Service client inutile, aucune solution proposee.",negatif,service
+44,"Application lente, bugs frequents et navigation confuse.",negatif,application
+45,"Repas froid et attente beaucoup trop longue.",negatif,restaurant
+46,"Hotel bruyant, chambre sale et personnel peu aimable.",negatif,hotel
+47,"Je suis decu, la qualite ne correspond pas a la description.",negatif,ecommerce
+48,"Le film est ennuyeux et les dialogues sont faibles.",negatif,cinema
+49,"Produit fragile, il s'est casse rapidement.",negatif,ecommerce
+50,"Impossible de contacter le support pendant plusieurs jours.",negatif,service
+51,"Interface compliquee et erreurs a chaque connexion.",negatif,application
+52,"Commande incomplete et remboursement difficile.",negatif,ecommerce
+53,"Mauvaise experience, je ne recommande pas.",negatif,ecommerce
+54,"Le restaurant etait sale et le service desagreable.",negatif,restaurant
+55,"Chambre minuscule, climatisation en panne.",negatif,hotel
+56,"Achat decevant, performances tres faibles.",negatif,ecommerce
+57,"Beaucoup trop cher pour une qualite mediocre.",negatif,ecommerce
+58,"Application instable et temps de chargement interminable.",negatif,application
+59,"Le support repond tard et ne comprend pas le probleme.",negatif,service
+60,"Produit non conforme, retour complique.",negatif,ecommerce
+

@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: sentiment-nlp
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+
